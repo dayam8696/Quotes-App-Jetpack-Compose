@@ -36,11 +36,11 @@ import com.example.quotes_app_jetpack_compose.models.Quote
 
 
 @Composable
-fun QuoteListItem(quote:Quote ,onClick :()-> Unit) {
+fun QuoteListItem(quote:Quote ,onClick :(quote :Quote)-> Unit) {
     Card(
         elevation = CardDefaults.cardElevation(4.dp),
         modifier = Modifier
-            .clickable { onClick }
+            .clickable { onClick(quote) }
             .padding(8.dp)
     ) {
         Row(modifier = Modifier.padding(16.dp)) {
